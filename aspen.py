@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import requests
 import time
 import json
@@ -27,7 +29,7 @@ def send_discord_webhook(webhook_url, song_info):
         metadata = song_info['radio_metadata']
         song_data = metadata['metadata'].strip()
         
-        # Verificar que tenemos una canci¨®n v¨¢lida
+        # Verificar que tenemos una canciÂ¨Â®n vÂ¨Â¢lida
         if not song_data:
             print("Datos de cancion vacios, no se enviara notificacion")
             return False
@@ -68,7 +70,7 @@ def main():
             if current_data:
                 current_song = current_data['radio_metadata']['metadata'].strip()
                 
-                # Solo procesar si tenemos una canci¨®n v¨¢lida y es diferente a la anterior
+                # Solo procesar si tenemos una canciÂ¨Â®n vÂ¨Â¢lida y es diferente a la anterior
                 if current_song and current_song != last_song:
                     print("Nueva cancion detectada:", current_song)
                     success = send_discord_webhook(webhook_url, current_data)
@@ -83,7 +85,7 @@ def main():
                 print("No se obtuvieron datos validos de la API")
                 error_count += 1
             
-            # Si hay muchos errores consecutivos, esperar m¨¢s tiempo
+            # Si hay muchos errores consecutivos, esperar mÂ¨Â¢s tiempo
             if error_count > 5:
                 print("Demasiados errores, esperando 2 minutos...")
                 time.sleep(120)
