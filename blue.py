@@ -11,7 +11,7 @@ def get_radio_metadata():
     }
     
     try:
-        response = requests.get(url, headers=headers, timeout=10)  # Añadido timeout de 10 segundos
+        response = requests.get(url, headers=headers, timeout=10)  # AÃ±adido timeout de 10 segundos
         if response.status_code == 200:
             data = response.json()
             # Verificar que tenemos todos los datos necesarios
@@ -37,12 +37,12 @@ def send_discord_webhook(webhook_url, song_info):
         image_url = metadata.get('artwork_url_large', '')
         
         embed = {
-            "title": "Nueva Cancion",
+            "title": "Nueva Cancion!",
             "description": song_data,
             "color": 3447003
         }
         
-        # Solo añadir la imagen si existe
+        # Solo aÃ±adir la imagen si existe
         if image_url:
             embed["thumbnail"] = {"url": image_url}
         
