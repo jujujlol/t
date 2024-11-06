@@ -2,7 +2,7 @@ name: Python CI
 
 on:
   schedule:
-    - cron: '*/21600 * * * *'  # Se ejecuta cada 5 minutos 
+    - cron: '0 */6 * * *'  # Se ejecuta cada 6 horas
 
 jobs:
   build:
@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Check out the repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.8'
 
