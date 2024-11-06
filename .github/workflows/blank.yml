@@ -25,4 +25,4 @@ jobs:
         pip install -r requirements.txt  # Asegúrate de tener un requirements.txt
 
     - name: Run the Python script
-      run: python aspen.py  # Cambia 'your_script.py' por el nombre de tu archivo
+      run: python blue.py  # Cambia 'your_script.py' por el nombre de tu archivo
